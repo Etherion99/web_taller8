@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class DocumentType extends Model
 {
+    protected $fillable = [
+        'name',
+        'description'
+    ];
+
     public function people()
      {
-         return $this->hasMany(people::class);
+         return $this->hasMany(Person::class);
      }
 }

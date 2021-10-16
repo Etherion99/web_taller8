@@ -9,23 +9,25 @@ class Person extends Model
 {
     protected $fillable = [
         'name',
-        'last_names',
+        'lastname',
         'email',        
         'username',  
         'password',  
         'residence_place',
         'document',  
-        
+        'phone',
+        'birthdate',
+        'document_type_id'
     ];
 
     //Relación n-1 con cities
     public function city()
     {
-        return $this->belongsTo(cities::class);
+        return $this->belongsTo(City::class);
     }
     //Relación n-1 con documenttype
     public function documenttype()
     {
-        return $this->belongsTo(documentypes::class);
+        return $this->belongsTo(DocumentType::class);
     }
 }

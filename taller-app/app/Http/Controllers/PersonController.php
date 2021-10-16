@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
+use Illuminate\Database\QueryException;
 
 class PersonController extends Controller
 {
@@ -15,15 +16,61 @@ class PersonController extends Controller
         return Person::find($id)->first();
     }
 
-    public function insert(){
-        return Person::insert();
+    public function insert(Request $request){
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
+
+        try{
+            Person::create($request->all());
+        }catch(QueryException $e){
+            $info = $e->errorInfo;
+
+            switch($info[1]){
+                case 1062:
+                    $res['message'] = 'Datos duplicados';
+                    break;
+                default:
+                    $res['message'] = 'Error al insertar';
+                    break;
+            }
+
+            $res['ok'] = false;    
+        }
+        
+        return $res;
     }
 
-    public function update(){
-        
+    public function update(Request $request, $id){
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
+
+        try{
+            Person::find($id)->update($request->all());
+        }catch(QueryException $e){
+            $res['ok'] = false; 
+            $res['message'] = 'Error al actualizar';   
+        }
+
+        return $res;
     }
 
-    public function delete(){
-        
+    public function delete($id){
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
+
+        try{
+            Person::find($id)->delete();
+        }catch(QueryException $e){
+            $res['ok'] = false; 
+            $res['message'] = 'Error al borrar';   
+        }
+
+        return $res;
     }
 }
