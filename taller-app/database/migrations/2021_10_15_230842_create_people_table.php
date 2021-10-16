@@ -18,12 +18,12 @@ class CreatePeopleTable extends Migration
             $table->String('names',20);
             $table->String('last_names',20);    
             $table->foreignId('documentype_id');
-            $table->Integer('document');
+            $table->String('document')->unique();
             $table->foreignId('residence_place',15);
             $table->date('birthdate');
-            $table->String('email');
+            $table->String('email')->unique();
             $table->Integer('telephone');
-            $table->String('user',10);
+            $table->String('user',10)->unique();
             $table->String('password',15);
             $table->timestamps();
             $table->foreign('residence_place')->references('id')->on('cities');
