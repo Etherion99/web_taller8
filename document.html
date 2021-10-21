@@ -26,6 +26,17 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
+                        <label for="name"  class="form-label fw-bold">ID</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="ID" id="ID">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>    
+                    </div>                    
+                </div> 
+                <div class="row mb-4">
+                    <div class="col">
                         <label for="name" class="form-label fw-bold">Nombre</label>
                         <div class="input-group d-flex">
                             <input type="text" class="form-control order-2" name="name" id="name">
@@ -44,53 +55,30 @@
                         </div>
                     </div>
                 </div> 
-                <div class="row mb-4">
-                    <div class="col">
-                        <label for="name" id="id " class="form-label fw-bold">ID Nombre</label>
-                        <div class="input-group d-flex">
-                            <input type="text" class="form-control order-2" name="name" id="name">
-                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-                            <span class="focus-border"><i></i></span>
-                            <div class="invalid-feedback order-3"></div>
-                        </div>    
-                    </div>
-                    <div class="col">
-                        <label for="lastname" id="id2 " class="form-label fw-bold">ID Descripción</label>
-                        <div class="input-group d-flex">
-                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-                            <span class="focus-border"><i></i></span>
-                            <div class="invalid-feedback order-3"></div>
-                        </div>
-                    </div>
                 
-                </div> 
-                <div class="row mb-4">
-                    <div class="col">
-                        <label for="name"  class="form-label fw-bold">ID</label>
-                        <div class="input-group d-flex">
-                            <input type="text" class="form-control order-2" name="ID" id="ID">
-                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-                            <span class="focus-border"><i></i></span>
-                            <div class="invalid-feedback order-3"></div>
-                        </div>    
-                    </div>
-                    
-                    
-                    
-                </div> 
 
-                <div id ="boton1" class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Registrarme</button>
+                <div class="row col-12 mb-2 mt-3"> 
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="insert()">Insertar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="read()">Listar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="update()">Actualizar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="remove()">Eliminar</button>
+                    </div>           
                 </div>
-                <div id ="boton2" class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Listar</button>
-                </div>
-                <div id ="boton3" class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Actualizar</button>
-                </div>
-                <div id ="boton4" class="row mb-2 justify-content-right">                
-                    <button class="btn btn-main col-3 fw-bold">Eliminar</button>
+
+                <div class="row col-12 mb-2 mt-5"> 
+                    <div class="col px-3 text-center">
+                        <button type="button"class="btn btn-main fw-bold" onclick="navigate('index.html')">CRUD personas</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button type="button"class="btn btn-main fw-bold" onclick="navigate('city.html')">CRUD ciudades</button>
+                    </div>         
                 </div>
             </div>
         </form>

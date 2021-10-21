@@ -126,17 +126,28 @@
                 </div>
                    
                                                
-                <div class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Registrarme</button>
+                <div class="row col-12 mb-2 mt-3"> 
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="insert()">Insertar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="read()">Listar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="update()">Actualizar</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button class="btn btn-main fw-bold" onclick="remove()">Eliminar</button>
+                    </div>           
                 </div>
-                <div class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Listar</button>
-                </div>
-                <div class="row mb-2 justify-content-left">                
-                    <button class="btn btn-main col-3 fw-bold">Actualizar</button>
-                </div>
-                <div class="row mb-2 justify-content-right">                
-                    <button class="btn btn-main col-3 fw-bold">Eliminar</button>
+    
+                <div class="row col-12 mb-2 mt-5"> 
+                    <div class="col px-3 text-center">
+                        <button type="button" class="btn btn-main fw-bold" onclick="navigate('document.html')">CRUD Tipo de documento</button>
+                    </div>
+                    <div class="col px-3 text-center">
+                        <button type="button" class="btn btn-main fw-bold" onclick="navigate('city.html')">CRUD ciudades</button>
+                    </div>         
                 </div>
             </div>
         </form>

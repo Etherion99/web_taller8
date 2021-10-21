@@ -6,23 +6,6 @@ el modelo de carro que mas le gusta.*/
 //Llamar al html
 const radio =  document.getElementById('radio');
 const noradio = document.getElementById('noradio');
-let tst = document.getElementById('gustos');
-tst.style.display = "none";
-
-function showTastes() {
-    var x = document.getElementById("gustos");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } 
-}
-
-function noshowTastes(){
-    var x = document.getElementById("gustos");
-    if (x.style.display != "none") {
-        x.style.display = "none";
-    } 
-}
-
 
 function updateValuemin(input)
 {
