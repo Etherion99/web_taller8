@@ -12,8 +12,8 @@ class PersonController extends Controller
         return Person::all();
     }
 
-    public function show($id){
-        return Person::find($id)->first();
+    public function show($doc){
+        return Person::where('document', $doc)->first();
     }
 
     public function insert(Request $request){
